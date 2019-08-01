@@ -18,8 +18,9 @@
 Class to interact with a BDII LDAP server to retrieve information about 
 the stomp brokers specified in a network.
 '''
-import ldap
 import logging
+
+import ldap
 
 log = logging.getLogger(__name__)
 
