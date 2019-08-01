@@ -21,10 +21,10 @@
    decided on.
 '''
 
-from subprocess import Popen, PIPE
-import quopri
 import base64
 import logging
+import quopri
+from subprocess import Popen, PIPE
 
 # logging configuration
 log = logging.getLogger(__name__)
