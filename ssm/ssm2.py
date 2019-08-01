@@ -16,6 +16,11 @@
    @author: Will Rogers
 '''
 
+import logging
+import os
+import socket
+import time
+
 # It's possible for SSM to be used without SSL, and the ssl module isn't in the
 # standard library until 2.6, so this makes it safe for earlier Python versions.
 try:
@@ -23,9 +28,6 @@ try:
 except ImportError:
     # ImportError is raised later on if SSL is actually requested.
     ssl = None
-
-from ssm import crypto
-from ssm.message_directory import MessageDirectory
 
 try:
     from dirq.QueueSimple import QueueSimple
@@ -37,13 +39,10 @@ except ImportError:
 
 import stomp
 from stomp.exception import ConnectFailedException
-
-import os
-import socket
-import time
-import logging
-
 from argo_ams_library import ArgoMessagingService, AmsMessage
+
+from ssm import crypto
+from ssm.message_directory import MessageDirectory
 
 # Set up logging
 log = logging.getLogger(__name__)
