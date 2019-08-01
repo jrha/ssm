@@ -19,17 +19,18 @@ Script to run a sending SSM.
 @author: Will Rogers
 '''
 
-from ssm import __version__, set_up_logging, LOG_BREAK
-from ssm.ssm2 import Ssm2, Ssm2Exception
-from ssm.crypto import CryptoException
-from ssm.brokers import StompBrokerGetter, STOMP_SERVICE, STOMP_SSL_SERVICE
-
-import logging.config
-import ldap
-import sys
-import os
-from optparse import OptionParser
 import ConfigParser
+import logging.config
+import os
+import sys
+from optparse import OptionParser
+
+import ldap
+
+from ssm import __version__, set_up_logging, LOG_BREAK
+from ssm.brokers import StompBrokerGetter, STOMP_SERVICE, STOMP_SSL_SERVICE
+from ssm.crypto import CryptoException
+from ssm.ssm2 import Ssm2, Ssm2Exception
 
 
 def main():
