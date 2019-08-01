@@ -3,11 +3,11 @@ Created on 7 Dec 2011
 
 @author: will
 '''
-import unittest
 import logging
 import os
-from subprocess import call, Popen, PIPE
 import quopri
+import unittest
+from subprocess import call, Popen, PIPE
 
 from ssm.crypto import check_cert_key, \
     get_certificate_subject, \
