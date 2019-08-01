@@ -1,7 +1,7 @@
 import os
 import tempfile
-from textwrap import dedent
 import unittest
+from textwrap import dedent
 
 import mock
 
