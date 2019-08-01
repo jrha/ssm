@@ -19,21 +19,21 @@ Script to run a receiving SSM.
 @author: Will Rogers
 '''
 
-from ssm.brokers import StompBrokerGetter, STOMP_SERVICE, STOMP_SSL_SERVICE
-from ssm.ssm2 import Ssm2, Ssm2Exception
-from ssm import __version__, set_up_logging, LOG_BREAK
-
-from stomp.exception import NotConnectedException
-from argo_ams_library import AmsConnectionException
-
-import time
+import ConfigParser
 import logging.config
-import ldap
 import os
 import sys
-from optparse import OptionParser 
+import time
+from optparse import OptionParser
+
+import ldap
+from argo_ams_library import AmsConnectionException
 from daemon import DaemonContext
-import ConfigParser
+from stomp.exception import NotConnectedException
+
+from ssm import __version__, set_up_logging, LOG_BREAK
+from ssm.brokers import StompBrokerGetter, STOMP_SERVICE, STOMP_SSL_SERVICE
+from ssm.ssm2 import Ssm2, Ssm2Exception
 
 # How often (in seconds) to read the list of valid DNs.
 REFRESH_DNS = 600
